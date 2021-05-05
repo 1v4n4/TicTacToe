@@ -8,20 +8,25 @@
 
 ## Getting Started
 
-1. Clone the project
-   https://github.com/1v4n4/TicTac
+### To get a local copy up and running simply follow the next step.
 
-2. Then run "git checkout milestone1"
+Clone this repository on to your local PC
+- Click on the `Code` green button
+- By the right end of the read-only input containing the repository link click the clipboard icon to copy the link
+- In your local PC, open your terminal in the folder you would like to clone the repository into
+- Clone the repository with the command: `git clone (copied link)`; like so: `git clone https://github.com/1v4n4/TicTac`
+- After the clone, type in the command `cd TicTac` to access the directory on the terminal
+- Then run "git checkout milestone1"
 
 ## Authors
 
-:bust_in_silhouette: **Author1**
+:bust_in_silhouette: **Ivana Novakovic-Lekovic**
 
-- GitHub: [@igorkol91](https://github.com/1v4n4)
-- Twitter: [@Destro49536502]
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/1v4n4)
+- Twitter: [@twitterhandle](https://twitter.com/codeIv1)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/ivana-novakovic-lekovic/)
 
-:bust_in_silhouette: **Author2**
+:bust_in_silhouette: **Victor Otieno**
 
 - GitHub: [@vikitaotiz](https://github.com/vikitaotiz)
 - Twitter: [@victoro29641869]
