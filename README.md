@@ -1,6 +1,6 @@
 # TicTac
 
-> This project shows setup for Tic Tac Toe project
+> This project shows user interface for Tic Tac Toe project
 
 ## Built With
 
