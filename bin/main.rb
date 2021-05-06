@@ -27,8 +27,13 @@ players << {'name'=>player_two, 'sym'=>'Y'}
 
 puts "#{player_one} will use 'X while #{player_two} will use 'Y'"
 
-#while !won || !board.full do
+def clear_screen(arr)
+    system 'clear'
+    system 'cls'
+    display_board(arr)
+end
 
+# while !won || !board.full do
 
    puts "#{player_one} it's your move"
    puts "Please select an available cell from the board"
@@ -39,8 +44,7 @@ puts "#{player_one} will use 'X while #{player_two} will use 'Y'"
    end
    board[answer-1] = 'X'
 
-   system 'clear'
-   display_board(board)
+   clear_screen(board)
 
    #break if won || board.full
 
@@ -53,7 +57,16 @@ puts "#{player_one} will use 'X while #{player_two} will use 'Y'"
    end
    board[answer-1] = 'O'
 
-   system 'clear'
-   display_board(board)
+   clear_screen(board)
+
+   #break if won || board.full
 
 #end
+
+# if won && answer == 'X'
+    puts "#{player_one} won the game"
+# elsif won && answer == 'O' 
+    puts "#{player_two} won the game"
+# else
+     puts "It's a tie\n Game over!"
+# end
