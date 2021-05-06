@@ -15,6 +15,8 @@ end
 
 display_board(board)
 
+puts "Welcome to Victor\'s and Ivana\'s Tic Toc"
+puts 'Let the game begin!'
 print 'Enter Player 1 name: '
 player_one = gets.strip.chomp.capitalize
 players << {'name'=>player_one, 'sym'=>'X'}
@@ -25,4 +27,33 @@ players << {'name'=>player_two, 'sym'=>'Y'}
 
 puts "#{player_one} will use 'X while #{player_two} will use 'Y'"
 
-p players
+#while !won || !board.full do
+
+
+   puts "#{player_one} it's your move"
+   puts "Please select an available cell from the board"
+   answer = gets.chomp.to_i
+   until board.include? (answer) do
+      puts "Please enter a number of an available cell"
+      answer = gets.chomp.to_i
+   end
+   board[answer-1] = 'X'
+
+   system 'clear'
+   display_board(board)
+
+   #break if won || board.full
+
+   puts "#{player_two} it's your move"
+   puts "Please select an available cell from the board"
+   answer = gets.chomp.to_i
+   until board.include? (answer) do
+      puts "Please enter a number of an available cell"
+      answer = gets.chomp.to_i
+   end
+   board[answer-1] = 'O'
+
+   system 'clear'
+   display_board(board)
+
+#end
