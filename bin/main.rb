@@ -18,12 +18,25 @@ display_board(board)
 puts "Welcome to Victor\'s and Ivana\'s Tic Toc"
 puts 'Let the game begin!'
 print 'Enter Player 1 name: '
-player_one = gets.strip.chomp.capitalize
+name = gets.strip.chomp.capitalize
+
+until !name.empty?
+ print 'You can\'t leave this empty. Please, enter you name '
+ name = gets.strip.chomp.capitalize
+end
+player_one = name
 players << { 'name' => player_one, 'sym' => 'X' }
 
 print 'Enter Player 2 name: '
-player_two = gets.strip.chomp.capitalize
+name = gets.strip.chomp.capitalize
+until !name.empty?
+ print 'You can\'t leave this empty. Please, enter you name '
+ name = gets.strip.chomp.capitalize
+end
+
+player_two = name
 players << { 'name' => player_two, 'sym' => 'Y' }
+
 
 puts "#{player_one} will use 'X while #{player_two} will use 'Y'"
 
@@ -33,7 +46,11 @@ def clear_screen(arr)
   display_board(arr)
 end
 
-# while !won || !board.full do
+def tie(arr)
+ arr.none? {|a| a.is_a?(Integer) }
+end
+
+ while !tie(board) do
 
 puts "#{player_one} it's your move"
 puts 'Please select an available cell from the board'
@@ -46,7 +63,7 @@ board[answer - 1] = 'X'
 
 clear_screen(board)
 
-# break if won || board.full
+ break if tie(board)
 
 puts "#{player_two} it's your move"
 puts 'Please select an available cell from the board'
@@ -59,9 +76,7 @@ board[answer - 1] = 'O'
 
 clear_screen(board)
 
-# break if won || board.full
-
-# end
+end
 
 # if won && answer == 'X'
 puts "#{player_one} won the game"
@@ -70,3 +85,4 @@ puts "#{player_two} won the game"
 # else
 puts "It's a tie\n Game over!"
 # end
+
