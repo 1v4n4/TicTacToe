@@ -28,6 +28,11 @@ puts "#{player1.name} will use #{player1.sym} while #{player2.name} will use #{p
 
 new_board.clear_screen
 
+# rubocop: disable Lint/Void
+# rubocop: disable Style/IdenticalConditionalBranches
+
+clear = new_board.clear_screen
+
 while !new_board.won? || !new_board.tie?
 
   puts "#{player1.name} it's your move"
@@ -50,25 +55,27 @@ while !new_board.won? || !new_board.tie?
   answer = gets.chomp.to_i
 
   until new_board.board.include?(answer)
-   invalid
-   answer = gets.chomp.to_i
+    invalid
+    answer = gets.chomp.to_i
   end
   new_board.board[answer - 1] = 'O'
   count += 1
   break if new_board.won? || new_board.tie?
 
   new_board.clear_screen
-
 end
 
 if new_board.won? && count.odd?
-  new_board.clear_screen
+  clear
+  # new_board.clear_screen
   puts "#{player1.name} won the game!"
 elsif new_board.won? && count.even?
-  new_board.clear_screen
+  clear
   puts "#{player2.name} won the game!"
 else
-  new_board.clear_screen
+  clear
+  # new_board.clear_screen
   tie_msg
 end
-
+# rubocop: enable Lint/Void
+# rubocop: enable Style/IdenticalConditionalBranches

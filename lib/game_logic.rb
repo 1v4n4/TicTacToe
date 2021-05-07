@@ -1,7 +1,7 @@
 module TicTacToe
   class Board
     attr_accessor :board
-    
+
     def initialize
       @board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     end
@@ -40,7 +40,7 @@ module TicTacToe
     def clear_screen
       system 'clear'
       system 'cls'
-      display_board()
+      display_board
     end
   end
 end
