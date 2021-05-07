@@ -11,7 +11,7 @@ WINNERS = [
   [1, 4, 7], # 2nd vertial column
   [2, 5, 8], # 3rd vertial column
   [6, 4, 2], # right diagonal
-  [0, 4, 8]  # left diagonal
+  [0, 4, 8] # left diagonal
 ].freeze
 
 count = 0
@@ -52,8 +52,6 @@ players << { 'name' => player_two, 'sym' => 'Y' }
 
 puts "#{player_one} will use 'X while #{player_two} will use 'Y'"
 
-# rubocop: disable Metrics/PerceivedComplexity
-# rubocop: disable Metrics/CyclomaticComplexity
 def won?(board)
   WINNERS.detect do |i|
     board[i[0]] == board[i[1]] && board[i[1]] == board[i[2]]
@@ -107,6 +105,3 @@ elsif won?(board) && count.even?
 else
   puts "It's a tie\n Game over!"
 end
-
-# rubocop: enable Metrics/PerceivedComplexity
-# rubocop: enable Metrics/CyclomaticComplexity
