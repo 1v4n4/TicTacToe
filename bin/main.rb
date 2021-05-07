@@ -35,12 +35,12 @@ end
 
 player2 = TicTacToe::Player.new(name, 'O')
 
+clear_screen
+puts new_board.display_board
+
 puts "#{player1.name} will use #{player1.sym} while #{player2.name} will use #{player2.sym}"
 
 # rubocop: disable Style/IdenticalConditionalBranches
-
-clear_screen
-puts new_board.display_board
 
 while !new_board.won? || !new_board.tie?
 

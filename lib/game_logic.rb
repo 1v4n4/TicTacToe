@@ -1,4 +1,6 @@
 module TicTacToe
+  attr_reader :board
+
   class Board
     def initialize
       @board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
