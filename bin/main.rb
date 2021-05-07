@@ -4,6 +4,9 @@ require './lib/game_logic'
 require './lib/helpers'
 require './lib/player'
 
+# rubocop: disable Style/MixinUsage
+include TicTacToe
+# rubocop: enable Style/MixinUsage
 count = 0
 
 new_board = TicTacToe::Board.new

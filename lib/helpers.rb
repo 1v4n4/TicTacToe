@@ -1,3 +1,4 @@
+module TicTacToe
 def check_name(name)
   while name.empty?
     print 'You can\'t leave this empty. Please, enter you name '
@@ -11,4 +12,6 @@ end
 
 def tie_msg
   puts "It's a tie\n Game over!"
+end
+
 end
