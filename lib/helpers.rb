@@ -1,8 +1,7 @@
 module TicTacToe
-
   def clear_screen
-      system 'clear'
-      system 'cls'
+    system 'clear'
+    system 'cls'
   end
 
   def invalid
@@ -16,5 +15,4 @@ module TicTacToe
   def empty_msg
     'You can\'t leave this empty. Please, enter you name '
   end
-
 end

@@ -6,6 +6,5 @@ module TicTacToe
       @name = name
       @sym = sym
     end
-
   end
 end
