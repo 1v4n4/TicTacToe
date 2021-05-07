@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+require './lib/game.rb'
+
 board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 players = []
 
@@ -56,12 +58,6 @@ def won?(board)
   WINNERS.detect do |i|
     board[i[0]] == board[i[1]] && board[i[1]] == board[i[2]]
   end
-end
-
-def clear_screen(arr)
-  system 'clear'
-  system 'cls'
-  display_board(arr)
 end
 
 def tie?(arr)
