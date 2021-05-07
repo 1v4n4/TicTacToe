@@ -30,7 +30,7 @@ display_board(board)
 
 puts "Welcome to Victor\'s and Ivana\'s Tic Toc"
 puts 'Let the game begin!'
-print 'Enter Player 1 name: '
+print 'Player 1, enter your name: '
 name = gets.strip.chomp.capitalize
 
 while name.empty?
@@ -40,7 +40,7 @@ end
 player_one = name
 players << { 'name' => player_one, 'sym' => 'X' }
 
-print 'Enter Player 2 name: '
+print 'Player 2, enter your name: '
 name = gets.strip.chomp.capitalize
 while name.empty?
   print 'You can\'t leave this empty. Please, enter you name '
@@ -105,7 +105,7 @@ if won?(board) && count.odd?
 elsif won?(board) && count.even?
   puts "#{player_two} won the game!"
 else
-  puts "It's a tie?\n Game over!"
+  puts "It's a tie\n Game over!"
 end
 
 # rubocop: enable Metrics/PerceivedComplexity
