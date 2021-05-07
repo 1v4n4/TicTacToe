@@ -1,34 +1,14 @@
 #!/usr/bin/env ruby
 
-require './lib/game.rb'
+require './lib/board'
+require './lib/logic'
+require './lib/player'
 
-board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-players = []
-
-WINNERS = [
-  [0, 1, 2], # 1st horizontal row
-  [3, 4, 5], # 2nd horizontal row
-  [6, 7, 8], # 3rd horizontal row
-  [0, 3, 6], # 1st vertial column
-  [1, 4, 7], # 2nd vertial column
-  [2, 5, 8], # 3rd vertial column
-  [6, 4, 2], # right diagonal
-  [0, 4, 8] # left diagonal
-].freeze
-
+# board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 count = 0
 
-def display_board(board)
-  puts '+---+---+---+'
-  puts "| #{board[0]} | #{board[1]} | #{board[2]} |"
-  puts '+---+---+---+'
-  puts "| #{board[3]} | #{board[4]} | #{board[5]} |"
-  puts '+---+---+---+'
-  puts "| #{board[6]} | #{board[7]} | #{board[8]} |"
-  puts '+---+---+---+'
-end
-
-display_board(board)
+new_board = TicTacToe::Board.new
+new_board.display_board
 
 puts "Welcome to Victor\'s and Ivana\'s Tic Toc"
 puts 'Let the game begin!'
@@ -39,8 +19,8 @@ while name.empty?
   print 'You can\'t leave this empty. Please, enter you name '
   name = gets.strip.chomp.capitalize
 end
-player_one = name
-players << { 'name' => player_one, 'sym' => 'X' }
+
+player1 = TicTacToe::Player.new(name, 'X')
 
 print 'Player 2, enter your name: '
 name = gets.strip.chomp.capitalize
@@ -49,55 +29,49 @@ while name.empty?
   name = gets.strip.chomp.capitalize
 end
 
-player_two = name
-players << { 'name' => player_two, 'sym' => 'Y' }
+player2 = TicTacToe::Player.new(name, 'O')
 
-puts "#{player_one} will use 'X while #{player_two} will use 'Y'"
+puts "#{player1.name} will use #{player1.sym} while #{player2.name} will use #{player2.sym}"
 
-def won?(board)
-  WINNERS.detect do |i|
-    board[i[0]] == board[i[1]] && board[i[1]] == board[i[2]]
-  end
-end
+while !new_board.won? || !new_board.tie?
 
-def tie?(arr)
-  arr.none? { |a| a.is_a?(Integer) }
-end
-
-while !won?(board) || !tie?(board)
-
-  puts "#{player_one} it's your move"
+  puts "#{player1.name} it's your move"
   puts 'Please select an available cell from the board'
   answer = gets.chomp.to_i
-  until board.include?(answer)
+
+  until new_board.board.include?(answer)
     puts 'Invalid move. Please enter a number of an available cell'
     answer = gets.chomp.to_i
   end
-  board[answer - 1] = 'X'
+  new_board.board[answer - 1] = 'X'
   count += 1
-  clear_screen(board)
+  
+  new_board.clear_screen
 
-  break if won?(board) || tie?(board)
+  break if new_board.won? || new_board.tie?
 
-  puts "#{player_two} it's your move"
+  puts "#{player2.name} it's your move"
   puts 'Please select an available cell from the board'
   answer = gets.chomp.to_i
-  until board.include?(answer)
+  until new_board.board.include?(answer)
     puts 'Invalid move. Please enter a number of an available cell'
     answer = gets.chomp.to_i
   end
-  board[answer - 1] = 'O'
+  new_board.board[answer - 1] = 'O'
   count += 1
-  break if won?(board) || tie?(board)
+  break if new_board.won? || new_board.tie?
 
-  clear_screen(board)
+  new_board.clear_screen
 
 end
 
-if won?(board) && count.odd?
-  puts "#{player_one} won the game!"
-elsif won?(board) && count.even?
-  puts "#{player_two} won the game!"
+if new_board.won? && count.odd?
+  new_board.clear_screen
+  puts "#{player1.name} won the game!"
+elsif new_board.won? && count.even?
+  new_board.clear_screen
+  puts "#{player2.name} won the game!"
 else
+  new_board.clear_screen
   puts "It's a tie\n Game over!"
 end
