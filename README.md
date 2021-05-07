@@ -43,7 +43,7 @@ For more information about Tic-tac-toe visit [Wikipedia](https://en.wikipedia.or
 
 - GitHub: [@githubhandle](https://github.com/vikitaotiz)
 - Twitter: [@twitterhandle](https://twitter.com/victoro29641869)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/victor-otieno-22ba7773/)
 
 ## :handshake: Contributing
 
