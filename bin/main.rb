@@ -67,14 +67,12 @@ end
 
 if new_board.won? && count.odd?
   clear
-  # new_board.clear_screen
   puts "#{player1.name} won the game!"
 elsif new_board.won? && count.even?
   clear
   puts "#{player2.name} won the game!"
 else
   clear
-  # new_board.clear_screen
   tie_msg
 end
 # rubocop: enable Lint/Void
