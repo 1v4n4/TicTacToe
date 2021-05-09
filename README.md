@@ -10,7 +10,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://1v4n4.github.io/TicTac/)
+[Live Demo Link](https://1v4n4.github.io/TicTacToe/)
 
 ## Getting Started
 
