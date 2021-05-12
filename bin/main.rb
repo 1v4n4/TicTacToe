@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/game_logic'
+require_relative '../lib/logic'
 require_relative '../lib/helpers'
 require_relative '../lib/player'
 
