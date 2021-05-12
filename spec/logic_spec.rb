@@ -1,8 +1,10 @@
-require_relative '../lib/logic.rb'
+require_relative '../lib/logic'
+# rubocop: disable Style/MixinUsage
 include TicTacToe
+# rubocop: enable Style/MixinUsage
 
 describe Board do
-  let (:new_board) {described_class.new}
+  let(:new_board) { described_class.new }
 
   describe '#initialize' do
     it 'creates an array of numbers from 1 to 9' do
@@ -10,11 +12,11 @@ describe Board do
     end
 
     it 'creates a counter with the value of zero' do
-     expect(subject.counter).to eql(0)
+      expect(subject.counter).to eql(0)
     end
   end
 
-  describe "#count" do
+  describe '#count' do
     it 'increases counter by one' do
       expect(subject.count).to eql(1)
     end
@@ -22,38 +24,37 @@ describe Board do
 
   describe '#display_board' do
     it 'returns initial board' do
-      expect(subject.display_board).to eq (['+---+---+---+',
-       "| 1 | 2 | 3 |",
-       '+---+---+---+',
-       "| 4 | 5 | 6 |",
-       '+---+---+---+',
-       "| 7 | 8 | 9 |",
-       '+---+---+---+'])
+      expect(subject.display_board).to eq(['+---+---+---+',
+                                           '| 1 | 2 | 3 |',
+                                           '+---+---+---+',
+                                           '| 4 | 5 | 6 |',
+                                           '+---+---+---+',
+                                           '| 7 | 8 | 9 |',
+                                           '+---+---+---+'])
     end
 
     describe '#update_board' do
-
       it 'takes number of cell as an argument and updates board with O, if counter is even' do
         subject.update_board(2)
-        expect(subject.board).to eql([1, "O", 3, 4, 5, 6, 7, 8, 9])
+        expect(subject.board).to eql([1, 'O', 3, 4, 5, 6, 7, 8, 9])
       end
 
       it 'takes number of cell as an argument and updates board with X, if counter is odd' do
         subject.count
         subject.update_board(2)
-        expect(subject.board).to eql([1, "X", 3, 4, 5, 6, 7, 8, 9])
+        expect(subject.board).to eql([1, 'X', 3, 4, 5, 6, 7, 8, 9])
       end
     end
 
     it 'returns current status of the board' do
       subject.update_board(5)
-       expect(subject.display_board).to eq (['+---+---+---+',
-        "| 1 | 2 | 3 |",
-        '+---+---+---+',
-        "| 4 | O | 6 |",
-        '+---+---+---+',
-        "| 7 | 8 | 9 |",
-        '+---+---+---+'])
+      expect(subject.display_board).to eq(['+---+---+---+',
+                                           '| 1 | 2 | 3 |',
+                                           '+---+---+---+',
+                                           '| 4 | O | 6 |',
+                                           '+---+---+---+',
+                                           '| 7 | 8 | 9 |',
+                                           '+---+---+---+'])
     end
   end
 
@@ -74,7 +75,7 @@ describe Board do
       subject.count
       subject.update_board(3)
       expect(subject.won?).to be_a(Array)
-      expect(subject.won?).to eql([0,1,2])
+      expect(subject.won?).to eql([0, 1, 2])
     end
   end
 
@@ -106,4 +107,3 @@ describe Board do
     end
   end
 end
-

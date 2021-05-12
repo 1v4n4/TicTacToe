@@ -1,4 +1,4 @@
-require_relative '../lib/helpers.rb'
+require_relative '../lib/helpers'
 include TicTacToe
 
 describe '#invalid' do
@@ -8,10 +8,10 @@ describe '#invalid' do
 end
 
 describe '#tie_msg' do
-    it 'outputs message when result is draw' do
-      expect(tie_msg).to eql("It's a tie\n Game over!")
-    end
+  it 'outputs message when result is draw' do
+    expect(tie_msg).to eql("It's a tie\n Game over!")
   end
+end
 
 describe '#empty_msg' do
   it 'outputs warning message to enter a name, if name is empty' do
