@@ -8,8 +8,6 @@ require_relative '../lib/player'
 include TicTacToe
 # rubocop: enable Style/MixinUsage
 
-count = 0
-
 new_board = TicTacToe::Board.new
 puts new_board.display_board
 
@@ -52,8 +50,9 @@ while !new_board.won? || !new_board.tie?
     puts invalid
     answer = gets.chomp.to_i
   end
-  new_board.board[answer - 1] = 'X'
-  count += 1
+
+  new_board.count
+  new_board.update_board(answer)
 
   clear_screen
   puts new_board.display_board
@@ -68,19 +67,20 @@ while !new_board.won? || !new_board.tie?
     puts invalid
     answer = gets.chomp.to_i
   end
-  new_board.board[answer - 1] = 'O'
-  count += 1
+
+  new_board.count
+  new_board.update_board(answer)
   break if new_board.won? || new_board.tie?
 
   clear_screen
   puts new_board.display_board
 end
 
-if new_board.won? && count.odd?
+if new_board.won? && new_board.counter.odd?
   clear_screen
   puts new_board.display_board
   puts "#{player1.name} won the game!"
-elsif new_board.won? && count.even?
+elsif new_board.won? && new_board.counter.even?
   clear_screen
   puts new_board.display_board
   puts "#{player2.name} won the game!"

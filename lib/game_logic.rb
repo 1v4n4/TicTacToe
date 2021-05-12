@@ -1,9 +1,22 @@
 module TicTacToe
-  attr_reader :board
+  attr_reader :board, :counter
 
   class Board
     def initialize
       @board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      @counter = 0
+    end
+
+    def count
+      @counter+=1
+    end
+
+    def update_board(answer)
+      if @counter.odd?
+        @board[answer - 1] = "X"
+      else
+        @board[answer - 1] = "O"
+      end
     end
 
     def display_board
