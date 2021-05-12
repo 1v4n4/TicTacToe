@@ -10,7 +10,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://1v4n4.github.io/TicTac/)
+[Live Demo Link](https://1v4n4.github.io/TicTacToe/)
 
 ## Getting Started
 
@@ -21,8 +21,8 @@
 - Click on the `Code` green button
 - By the right end of the read-only input containing the repository link click the clipboard icon to copy the link
 - In your local PC, open your terminal in the folder you would like to clone the repository into
-- Clone the repository with the command: `git clone (copied link)`; like so: `git clone https://github.com/1v4n4/TicTac`
-- After the clone, type in the command `cd TicTac` to access the directory on the terminal
+- Clone the repository with the command: `git clone (copied link)`; like so: `git clone https://github.com/1v4n4/TicTacToe`
+- After the clone, type in the command `cd TicTacToe` to access the directory on the terminal
 
 #### Play the game
 
