@@ -1,5 +1,7 @@
 require_relative '../lib/helpers'
+# rubocop: disable Style/MixinUsage
 include TicTacToe
+# rubocop: enable Style/MixinUsage
 
 describe '#invalid' do
   it 'outputs invalid move message' do
