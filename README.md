@@ -40,7 +40,7 @@
 
 ### Rspec
 
-To run the tests, enter the TicTacToe directory and run rspec. Then run the files helpers_spec.rb, logic_spec.rb and player_spec.rb in the spec folder using rspec command.
+To run the tests, enter the TicTacToe directory and run rspec --init. Then run the files helpers_spec.rb, logic_spec.rb and player_spec.rb in the spec folder using rspec command.
 
 ## About the game
 
