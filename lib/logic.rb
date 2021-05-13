@@ -8,15 +8,15 @@ module TicTacToe
     end
 
     def count
-      @counter+=1
+      @counter += 1
     end
 
     def update_board(answer)
-      if @counter.odd?
-        @board[answer - 1] = "X"
-      else
-        @board[answer - 1] = "O"
-      end
+      @board[answer - 1] = if @counter.odd?
+                             'X'
+                           else
+                             'O'
+                           end
     end
 
     def display_board

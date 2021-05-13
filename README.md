@@ -14,7 +14,13 @@
 
 ## Getting Started
 
-### To get a local copy and play game follow these steps:
+### To get a local copy and play game
+
+### Prerequisites
+
+- Text editor
+- GitHub
+- Git
 
 #### Clone this repository on to your local PC
 
@@ -31,6 +37,10 @@
 - Players will take turns marking their spots on the board.
 - The first player who matches three spots in a horizontal, vertical, or diagonal row. is the winner.
 - When the spots on the board are all marked with no matches, then, the game ends in a draw.
+
+### Rspec
+
+To run the tests, enter the TicTacToe directory and run rspec --init. Then run the files helpers_spec.rb, logic_spec.rb and player_spec.rb in the spec folder using rspec command.
 
 ## About the game
 
