@@ -12,8 +12,8 @@ module TicTacToe
       @counter += 1
     end
 
-    def update_board(answer)
-      @board[answer - 1] = @counter.odd? ? 'X' : 'O'
+    def update_board(i)
+      @board[i - 1] = @counter.odd? ? 'X' : 'O'
     end
 
     def display_board
