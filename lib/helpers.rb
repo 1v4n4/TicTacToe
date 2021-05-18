@@ -13,6 +13,6 @@ module TicTacToe
   end
 
   def empty_msg
-    'You can\'t leave this empty. Please, enter you name '
+    "You can't leave this empty. Please, enter you name"
   end
 end

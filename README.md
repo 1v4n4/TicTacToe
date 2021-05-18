@@ -32,12 +32,21 @@
 - The first player who matches three spots in a horizontal, vertical, or diagonal row. is the winner.
 - When the spots on the board are all marked with no matches, then, the game ends in a draw.
 
+## Tests
+
+This game uses Rspec [Rspec](https://rspec.info/)
+To run the tests:
+
+- In your terminal, cd into TicTacToe directory and run rspec --init.
+- Then run the files helpers_spec.rb, game_logic_spec.rb and player_spec.rb in the spec folder using rspec command.
+
 ## About the game
 
-Tic-tac-toe is a  game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a diagonal, horizontal, or vertical row is the winner. If all nine squares are full, and there is no winner, the game ends in a draw.
+Tic-tac-toe is a game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a diagonal, horizontal, or vertical row is the winner. If all nine squares are full, and there is no winner, the game ends in a draw.
 For more information about Tic-tac-toe visit [Wikipedia](https://en.wikipedia.org/wiki/Tic-tac-toe)
 
 ## If you want to play Tic-tac-toe online, follow this link:
+
 [Tic-tac-toe](https://replit.com/@IvanaNovakovicL/Tic-Tac-Toe?v=1)
 
 ## Authors
