@@ -114,6 +114,10 @@ describe Board do
   end
 
   describe '#tie?' do
+    it 'returns false if it finds empty cells' do
+      expect(new_board.tie?).to be false
+    end
+
     it 'returns true if all game cells are occupied (game over)' do
       new_board.count
 
