@@ -13,10 +13,10 @@ module TicTacToe
 
     def update_board(answer)
       @board[answer - 1] = if @counter.odd?
-        'X'
-      else
-        'O'
-      end
+                             'X'
+                           else
+                             'O'
+                           end
     end
 
     def display_board
