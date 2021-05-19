@@ -1,4 +1,6 @@
 module TicTacToe
+
+  require_relative '../bin/main.rb'
   def clear_screen
     system 'clear'
     system 'cls'
