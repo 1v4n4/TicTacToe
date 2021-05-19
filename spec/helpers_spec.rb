@@ -1,4 +1,4 @@
-require_relative '../lib/helpers'
+require_relative '../lib/helpers.rb'
 # rubocop: disable Style/MixinUsage
 include TicTacToe
 # rubocop: enable Style/MixinUsage

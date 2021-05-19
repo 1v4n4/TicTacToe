@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require_relative '../lib/logic'
-require_relative '../lib/helpers'
+require_relative '../lib/helpers.rb'
 require_relative '../lib/player'
 
 # rubocop: disable Style/MixinUsage
